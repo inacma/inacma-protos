@@ -16,8 +16,9 @@ message OrganizationResponse {
 }
 
 service OrganizationService {
-  rpc Create (Organization) returns (OrganizationResponse) {}
-  rpc Update (Organization) returns (OrganizationResponse) {}
-  rpc Remove (Organization) returns  (OrganizationResponse) {}
+  rpc Create (Organization) returns (IdResponse) {}
+  rpc Update (Organization) returns (IdResponse) {}
+  rpc Remove (Organization) returns  (IdResponse) {}
+  rpc Get (IdRequest) returns  (OrganizationResponse) {}
   rpc List (EmptyRequest) returns (OrganizationList) {}
 }

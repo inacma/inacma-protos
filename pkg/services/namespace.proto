@@ -16,8 +16,9 @@ message NamespaceResponse {
 }
 
 service NamespaceService {
-  rpc Create (Namespace) returns (NamespaceResponse) {}
-  rpc Update (Namespace) returns (NamespaceResponse) {}
-  rpc Remove (Namespace) returns  (NamespaceResponse) {}
+  rpc Create (Namespace) returns (IdResponse) {}
+  rpc Update (Namespace) returns (IdResponse) {}
+  rpc Remove (Namespace) returns  (IdResponse) {}
+  rpc Get (IdRequest) returns  (NamespaceResponse) {}
   rpc List (EmptyRequest) returns (NamespaceList) {}
 }

@@ -27,9 +27,10 @@ message UserPasswordResponse {
 }
 
 service UserService {
-  rpc Create (User) returns (UserResponse) {}
-  rpc Update (User) returns (UserResponse) {}
-  rpc Remove (User) returns  (UserResponse) {}
+  rpc Create (User) returns (IdResponse) {}
+  rpc Update (User) returns (IdResponse) {}
+  rpc Remove (User) returns  (IdResponse) {}
+  rpc Get (IdRequest) returns  (UserResponse) {}
   rpc List (EmptyRequest) returns (UserList) {}
   rpc UpdatePassword (UserPasswordRequest) returns (UserPasswordResponse) {}
 }
