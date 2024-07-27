@@ -1,8 +1,8 @@
 syntax = 'proto3';
 
-option go_package = "inacma.io/core/internal/services";
+option go_package = "inacma.io/core/pkg/services";
 
-import "types/namespace.proto";
+import "pkg/types/namespace.proto";
 
 message NamespaceRequest {
 

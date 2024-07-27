@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option go_package = "inacma.io/core/pkg/types";
+
+message Organization {
+  string id = 1;
+  string owner_id = 2;
+  string name = 3;
+  repeated string users = 4;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "inacma.io/core/pkg/types";
+
+message Plugin {
+  string id = 1;
+  optional string public_uuid = 2;
+  string org_id = 3;
+  repeated string namespace_id = 4;
+  string name = 5;
+  optional string description = 6;
+  string version = 7;
+  bool enabled = 8;
+  optional string url = 9;
+  repeated string os = 10;
+  repeated string arch = 11;
+}
+

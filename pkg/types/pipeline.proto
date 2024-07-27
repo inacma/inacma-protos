@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option go_package = "inacma.io/core/pkg/types";
+
+message Pipeline {
+  string id = 1;
+  string namespace_id = 2;
+  string name = 3;
+  optional string description = 4;
+  string key = 5;
+  optional string secret = 6;
+  optional bytes config = 7;
+  optional string on_error_action_id = 8;
+  repeated PipelineStep PipelineStep = 9;
+}
+
+message PipelineStep {
+  string id = 1;
+  string pipeline_id = 2;
+  string name = 3;
+  int32 step = 4;
+  string action_id = 5;
+  optional string on_error_action_id = 6;
+  optional bytes action_config = 7;
+}

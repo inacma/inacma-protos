@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option go_package = "inacma.io/core/pkg/types";
+
+enum EventType {
+  EventTypeAction = 0;
+  EventTypePipeline = 1;
+  EventTypeAgent = 2;
+}
+
+enum EventSide {
+  EventSideServer = 0;
+  EventSideAgent = 1;
+}
+
+message Event {
+  string id = 1;
+  string pipeline_id = 2;
+  EventType event_type = 3;
+  EventSide event_side = 4;
+  string key = 5;
+  int32 pipeline_step = 6;
+  optional bytes data = 7;
+  optional string description = 8;
+}

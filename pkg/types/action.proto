@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option go_package = "inacma.io/core/pkg/types";
+
+message Action {
+  string id = 1;
+  string namespace_id = 2;
+  string name = 3;
+  optional string description = 4;
+  string plugin_id = 5;
+  optional bytes config = 6;
+}
