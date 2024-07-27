@@ -1,0 +1,23 @@
+syntax = 'proto3';
+
+option go_package = "inacma.io/core/pkg/services";
+
+import "pkg/types/organization.proto";
+import "pkg/services/generic.proto";
+
+message OrganizationList {
+  repeated Organization organizations = 1;
+}
+
+message OrganizationResponse {
+  Organization organization = 1;
+  bool error = 2;
+  optional string message = 3;
+}
+
+service OrganizationService {
+  rpc Create (Organization) returns (OrganizationResponse) {}
+  rpc Update (Organization) returns (OrganizationResponse) {}
+  rpc Remove (Organization) returns  (OrganizationResponse) {}
+  rpc List (EmptyRequest) returns (OrganizationList) {}
+}

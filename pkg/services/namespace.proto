@@ -3,16 +3,21 @@ syntax = 'proto3';
 option go_package = "inacma.io/core/pkg/services";
 
 import "pkg/types/namespace.proto";
-
-message NamespaceRequest {
-
-}
+import "pkg/services/generic.proto";
 
 message NamespaceList {
   repeated Namespace namespaces = 1;
 }
 
+message NamespaceResponse {
+  Namespace namespace = 1;
+  bool error = 2;
+  optional string message = 3;
+}
+
 service NamespaceService {
-  rpc ListNamespaces (NamespaceRequest) returns (NamespaceList) {
-  }
+  rpc Create (Namespace) returns (NamespaceResponse) {}
+  rpc Update (Namespace) returns (NamespaceResponse) {}
+  rpc Remove (Namespace) returns  (NamespaceResponse) {}
+  rpc List (EmptyRequest) returns (NamespaceList) {}
 }

@@ -1,0 +1,35 @@
+syntax = 'proto3';
+
+option go_package = "inacma.io/core/pkg/services";
+
+import "pkg/types/user.proto";
+import "pkg/services/generic.proto";
+
+message UserList {
+  repeated User users = 1;
+}
+
+message UserResponse {
+  User user = 1;
+  bool error = 2;
+  optional string message = 3;
+}
+message UserPasswordRequest {
+  string user_id = 1;
+  string old_password = 2;
+  string new_password = 3;
+}
+
+message UserPasswordResponse {
+  string user_id = 1;
+  bool error = 2;
+  optional string message = 3;
+}
+
+service UserService {
+  rpc Create (User) returns (UserResponse) {}
+  rpc Update (User) returns (UserResponse) {}
+  rpc Remove (User) returns  (UserResponse) {}
+  rpc List (EmptyRequest) returns (UserList) {}
+  rpc UpdatePassword (UserPasswordRequest) returns (UserPasswordResponse) {}
+}
