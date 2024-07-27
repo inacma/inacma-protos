@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option go_package = "inacma.io/core/pkg/types";
+
+message Namespace {
+  string uuid = 1;
+  string name = 2;
+}
