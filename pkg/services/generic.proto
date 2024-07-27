@@ -1,3 +1,6 @@
+syntax = 'proto3';
+
+option go_package = "inacma.io/core/pkg/services";
 
 message EmptyRequest {
 
